@@ -1,5 +1,5 @@
-Gitolite README
-===============
+NetMon README
+=============
 
 ## Steps to install
 First, clone the repository
