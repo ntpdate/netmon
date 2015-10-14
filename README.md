@@ -4,7 +4,11 @@ NetMon README
 ## Steps to install
 First, clone the repository
 
-    git clone TODO
+    git clone https://github.com/thomai/netmon.git
+
+Satisfy some dependencies (you should prefer a virtual environment)
+
+* pytz
 
 Next, create the django sqlite3 database
 

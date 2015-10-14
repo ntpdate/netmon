@@ -1,6 +1,6 @@
 from django.test import TestCase
 from .models import DeviceType, User, Device, DeviceStatus
-from django.utils import timezone, dateparse
+from django.utils import dateparse
 import pytz
 
 
