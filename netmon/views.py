@@ -7,7 +7,7 @@ from .models import DeviceStatus
 class DeviceStatusList(ListCreateAPIView):
     """
     Return a list of all the tasks, or
-    create new ones
+     create new ones
     """
     queryset = DeviceStatus.objects.all()
     serializer_class = DeviceStatusSerializer

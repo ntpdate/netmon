@@ -31,6 +31,9 @@ class Device(models.Model):
     def __str__(self):
         return self.mac_address
 
+    def __unicode__(self):
+        return self.mac_address
+
 
 class DeviceAdmin(admin.ModelAdmin):
     list_display = ('mac_address', 'device_name', 'get_username', 'get_device_type')
@@ -47,3 +50,7 @@ class DeviceAdmin(admin.ModelAdmin):
 class DeviceStatus(models.Model):
     device = models.ForeignKey(Device)
     timestamp = models.DateTimeField()
+
+
+class DeviceStatusAdmin(admin.ModelAdmin):
+    list_display = ('device', 'timestamp')
