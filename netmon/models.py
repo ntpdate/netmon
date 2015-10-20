@@ -3,7 +3,7 @@ from django.contrib import admin
 
 
 class User(models.Model):
-    username = models.CharField(max_length=100, unique=True)
+    username = models.CharField(max_length=100, primary_key=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
 
@@ -16,14 +16,14 @@ class UserAdmin(admin.ModelAdmin):
 
 
 class DeviceType(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100, primary_key=True)
 
     def __str__(self):
         return self.name
 
 
 class Device(models.Model):
-    mac_address = models.CharField(max_length=17, unique=True)
+    mac_address = models.CharField(max_length=17, primary_key=True)
     device_name = models.CharField(max_length=100)
     user = models.ForeignKey(User)
     device_type = models.ForeignKey(DeviceType)
