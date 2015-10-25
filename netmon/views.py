@@ -2,7 +2,6 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from .serializers import DeviceStatusSerializer
 from .models import User, DeviceType, Device, DeviceStatus
 from django.views.generic import TemplateView
-from django.http import HttpResponse
 
 
 class DashboardView(TemplateView):

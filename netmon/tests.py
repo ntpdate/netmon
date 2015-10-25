@@ -4,7 +4,7 @@ from django.utils import dateparse
 import pytz
 
 
-class DeviceCreationTestCase(TestCase):
+class DeviceTestCase(TestCase):
     def setUp(self):
         notebook = DeviceType.objects.create(name='Notebook')
         johnny = User.objects.create(first_name='John', last_name='Doe', username='Johnny')
@@ -41,7 +41,7 @@ class DeviceCreationTestCase(TestCase):
         DeviceStatus.objects.create(device=device, timestamp=first_timestamp)
 
         # Add second status for the device
-        second_timestamp_from_somewhere = '2015-10-13 19:44:52.000001+01:00'
+        second_timestamp_from_somewhere = '2015-10-13 19:44:52.008230+01:00'
         second_timestamp = dateparse.parse_datetime(second_timestamp_from_somewhere).astimezone(pytz.utc)
         DeviceStatus.objects.create(device=device, timestamp=second_timestamp)
 
