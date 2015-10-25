@@ -25,8 +25,8 @@ class DeviceType(models.Model):
 class Device(models.Model):
     mac_address = models.CharField(max_length=17, primary_key=True)
     device_name = models.CharField(max_length=100)
-    user = models.ForeignKey(User)
-    device_type = models.ForeignKey(DeviceType)
+    user = models.ForeignKey(User, null=True, blank=True)
+    device_type = models.ForeignKey(DeviceType, null=True, blank=True)
 
     def __str__(self):
         return self.mac_address
@@ -40,11 +40,17 @@ class DeviceAdmin(admin.ModelAdmin):
 
     @classmethod
     def get_username(cls, device):
-        return device.user.username
+        if device.user:
+            return device.user.username
+        else:
+            return '<N/A>'
 
     @classmethod
     def get_device_type(cls, device):
-        return device.device_type.name
+        if device.device_type:
+            return device.device_type.name
+        else:
+            return '<N/A>'
 
 
 class DeviceStatus(models.Model):

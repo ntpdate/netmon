@@ -8,6 +8,7 @@ First, clone the repository.
 
 Satisfy some dependencies (you should prefer a virtual environment).
 
+* Django 1.8
 * pytz
 * djangorestframework
 * django-braces
@@ -23,3 +24,12 @@ Finally, create a django superuser.
 Now you're ready to start the django server.
 
     manage.py runserver 0.0.0.0:8080
+
+## Backup/Restore
+Execute the following command to back up your data ...
+
+    python manage.py dumpdata --indent 2 --output netmon_backup.json
+
+... and the following to restore your data ...
+
+    python manage.py loaddata netmon_backup.json

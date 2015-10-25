@@ -42,11 +42,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='device',
             name='device_type',
-            field=models.ForeignKey(to='netmon.DeviceType'),
+            field=models.ForeignKey(blank=True, to='netmon.DeviceType', null=True),
         ),
         migrations.AddField(
             model_name='device',
             name='user',
-            field=models.ForeignKey(to='netmon.User'),
+            field=models.ForeignKey(blank=True, to='netmon.User', null=True),
         ),
     ]
