@@ -10,6 +10,7 @@ Satisfy some dependencies (you should prefer a virtual environment).
 
 * pytz
 * djangorestframework
+* django-braces
 
 Next, create the django sqlite3 database.
 
